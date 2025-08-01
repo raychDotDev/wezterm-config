@@ -13,7 +13,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 		label = "MSYS UCRT64",
 		args = { "cmd.exe ", "/k", "C:\\msys64\\msys2_shell.cmd -defterm -here -no-start -ucrt64 -shell bash" },
 	})
-	config.default_prog = { "cmd.exe ", "/k", "C:\\msys64\\msys2_shell.cmd -defterm -here -no-start -ucrt64 -shell bash" }
+	config.default_prog = { "powershell", "-nol" }
 elseif wezterm.target_triple == "x86_64-pc-linux" then
 	config.default_prog = { "bash" }
 end
@@ -101,6 +101,16 @@ table.insert(
 		action = wezterm.action.CloseCurrentTab { confirm = false },
 	}
 )
+table.insert(
+	config.keys,
+	{
+		key = "t", 
+		mods = "CTRL|SHIFT",
+		action = wezterm.action { SpawnTab = "CurrentPaneDomain" },
+	}
+)
+
+
 wezterm.on('mux-is-process-stateful', function(_proc)
 	return false
 end)
