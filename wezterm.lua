@@ -24,9 +24,9 @@ config.launch_menu = launch_menu
 config.font = wezterm.font('CaskaydiaMono Nerd Font')
 
 config.text_background_opacity = 0.85
-local home = os.getenv("HOME");
+local home = os.getenv("USERPROFILE");
 if home == nil then
-	home = os.getenv("USERPROFILE");
+	home = os.getenv("HOME");
 end
 
 config.keys = {
@@ -36,7 +36,7 @@ config.keys = {
 config.background = {
 	{
 		source = {
-			File = home .. '\\.config\\wezterm\\pics\\0.jpg'
+			File = home .. '/.config/wezterm/pics/0.jpg'
 		},
 		repeat_x = 'NoRepeat',
 		width = 'Cover',
@@ -104,7 +104,7 @@ table.insert(
 table.insert(
 	config.keys,
 	{
-		key = "t", 
+		key = "t",
 		mods = "CTRL|SHIFT",
 		action = wezterm.action { SpawnTab = "CurrentPaneDomain" },
 	}
