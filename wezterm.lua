@@ -36,7 +36,7 @@ config.keys = {
 config.background = {
 	{
 		source = {
-			File = home .. '/.config/wezterm/pics/0.jpg'
+			File = home .. '/.config/wezterm/pics/1.jpg'
 		},
 		repeat_x = 'NoRepeat',
 		width = 'Cover',
