@@ -20,17 +20,13 @@ end
 
 config.launch_menu = launch_menu
 
-
-config.font = wezterm.font('CaskaydiaMono Nerd Font')
-
-config.text_background_opacity = 0.85
+config.text_background_opacity = 0.55
 local home = os.getenv("USERPROFILE");
 if home == nil then
 	home = os.getenv("HOME");
 end
 
 config.keys = {
-	{ key = 'l', mods = 'ALT', action = wezterm.action.ShowLauncher },
 }
 
 config.background = {
