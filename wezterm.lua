@@ -18,6 +18,7 @@ elseif wezterm.target_triple == "x86_64-pc-linux" then
 	config.default_prog = { "bash" }
 end
 
+config.anti_alias_custom_block_glyphs = false
 config.launch_menu = launch_menu
 
 config.text_background_opacity = 0.55
@@ -25,7 +26,8 @@ local home = os.getenv("USERPROFILE");
 if home == nil then
 	home = os.getenv("HOME");
 end
-
+config.freetype_load_flags = "MONOCHROME"
+config.freetype_load_target = "Mono"
 config.keys = {
 }
 
@@ -33,6 +35,7 @@ config.background = {
 	{
 		source = {
 			File = home .. '/.config/wezterm/pics/1.jpg'
+			-- File = home .. '/.config/wezterm/pics/horse.gif'
 		},
 		repeat_x = 'NoRepeat',
 		width = 'Cover',
@@ -51,11 +54,12 @@ config.window_padding = {
 }
 
 config.font_size = 12
+config.font = wezterm.font("DepartureMono Nerd Font Mono");
 config.color_scheme = 'Afterglow'
 
 config.use_fancy_tab_bar = false
-config.hide_tab_bar_if_only_one_tab = true
-config.tab_bar_at_bottom = true
+config.hide_tab_bar_if_only_one_tab = false
+config.tab_bar_at_bottom = false
 
 config.colors = {
 	tab_bar = {
