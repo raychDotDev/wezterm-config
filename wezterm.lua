@@ -26,15 +26,15 @@ local home = os.getenv("USERPROFILE");
 if home == nil then
 	home = os.getenv("HOME");
 end
-config.freetype_load_flags = "MONOCHROME"
-config.freetype_load_target = "Mono"
+-- config.freetype_load_flags = "MONOCHROME"
+-- config.freetype_load_target = "Mono"
 config.keys = {
 }
 
 config.background = {
 	{
 		source = {
-			File = home .. '/.config/wezterm/pics/1.jpg'
+			File = home .. '/.config/wezterm/pics/mine.png'
 			-- File = home .. '/.config/wezterm/pics/horse.gif'
 		},
 		repeat_x = 'NoRepeat',
@@ -42,7 +42,7 @@ config.background = {
 		horizontal_align = 'Center',
 		height = 'Cover',
 		vertical_align = 'Middle',
-		hsb = { brightness = 0.02 },
+		hsb = { brightness = 0.7 },
 	}
 }
 
@@ -54,7 +54,7 @@ config.window_padding = {
 }
 
 config.font_size = 12
-config.font = wezterm.font("DepartureMono Nerd Font Mono");
+config.font = wezterm.font("Monocraft");
 config.color_scheme = 'Afterglow'
 
 config.use_fancy_tab_bar = false
@@ -63,7 +63,7 @@ config.tab_bar_at_bottom = false
 
 config.colors = {
 	tab_bar = {
-		background = '#0b0b0b',
+		background = '#0b0b0b00',
 		active_tab = {
 			bg_color = '#2b2b2b',
 			fg_color = '#c0c0c0',
@@ -111,7 +111,7 @@ table.insert(
 )
 
 
-wezterm.on('mux-is-process-stateful', function(_proc)
+wezterm.on('mux-is-process-stateful', function()
 	return false
 end)
 
