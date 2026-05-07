@@ -63,7 +63,7 @@ config.tab_bar_at_bottom = false
 
 config.colors = {
 	tab_bar = {
-		background = '#0b0b0b00',
+		background = '#0b0b0b',
 		active_tab = {
 			bg_color = '#2b2b2b',
 			fg_color = '#c0c0c0',
