@@ -9,10 +9,6 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 		label = "PowerShell",
 		args = { "pwsh.exe", "-nol" },
 	})
-	table.insert(launch_menu, {
-		label = "MSYS UCRT64",
-		args = { "cmd.exe ", "/k", "C:\\msys64\\msys2_shell.cmd -defterm -here -no-start -ucrt64 -shell bash" },
-	})
 	config.default_prog = { "powershell", "-nol" }
 elseif wezterm.target_triple == "x86_64-pc-linux" then
 	config.default_prog = { "bash" }
@@ -21,29 +17,11 @@ end
 config.anti_alias_custom_block_glyphs = false
 config.launch_menu = launch_menu
 
-config.text_background_opacity = 0.55
 local home = os.getenv("USERPROFILE");
 if home == nil then
 	home = os.getenv("HOME");
 end
--- config.freetype_load_flags = "MONOCHROME"
--- config.freetype_load_target = "Mono"
 config.keys = {
-}
-
-config.background = {
-	{
-		source = {
-			File = home .. '/.config/wezterm/pics/mine.png'
-			-- File = home .. '/.config/wezterm/pics/horse.gif'
-		},
-		repeat_x = 'NoRepeat',
-		width = 'Cover',
-		horizontal_align = 'Center',
-		height = 'Cover',
-		vertical_align = 'Middle',
-		hsb = { brightness = 0.7 },
-	}
 }
 
 config.window_padding = {
@@ -54,7 +32,7 @@ config.window_padding = {
 }
 
 config.font_size = 12
-config.font = wezterm.font("Monocraft");
+config.font = wezterm.font("DepartureMono Nerd Font Mono", { weight = "Regular" });
 config.color_scheme = 'Afterglow'
 
 config.use_fancy_tab_bar = false
