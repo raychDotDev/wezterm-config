@@ -16,6 +16,8 @@ elseif wezterm.target_triple == "x86_64-pc-linux" then
 	config.default_prog = { "bash" }
 end
 
+config.font = wezterm.font("DepartureMono Nerd Font Mono");
+
 config.anti_alias_custom_block_glyphs = false
 config.launch_menu = launch_menu
 
@@ -34,7 +36,6 @@ config.window_padding = {
 }
 
 config.font_size = 12
-config.font = wezterm.font("DepartureMono Nerd Font Mono", { weight = "Regular" });
 -- config.color_scheme = 'Afterglow'
 
 config.use_fancy_tab_bar = false
@@ -78,7 +79,7 @@ config.colors = {
 	},
 	tab_bar = {
 
-		foreground = "#c5c9c5",
+		-- foreground = "#c5c9c5",
 		background = "#181616",
 		active_tab = {
 			bg_color = '#c5c9c5',
